@@ -3,6 +3,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_lock/src/no_animation_page.dart';
 
+enum InactiveBehaviour {
+  alwaysShow,
+  showWhenEnabled,
+  neverShow,
+}
+
 /// A widget which handles app lifecycle events for showing and hiding a lock
 /// screen. This should wrap around a `MyApp` widget (or equivalent).
 ///
@@ -34,6 +40,7 @@ class AppLock extends StatefulWidget {
   final Widget? lockScreen;
   final WidgetBuilder? lockScreenBuilder;
   final WidgetBuilder? inactiveBuilder;
+  final InactiveBehaviour inactiveBehaviour;
   final bool _initiallyEnabled;
   final Duration _initialBackgroundLockLatency;
 
@@ -45,6 +52,7 @@ class AppLock extends StatefulWidget {
     this.lockScreen,
     this.lockScreenBuilder,
     this.inactiveBuilder,
+    this.inactiveBehaviour = InactiveBehaviour.showWhenEnabled,
     @Deprecated(
         'Use `initiallyEnabled` instead. `enabled` will be removed in version 5.0.0.')
     bool? enabled,
@@ -111,6 +119,10 @@ class AppLockState extends State<AppLock> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
 
+    setState(() {
+      _inactive = state == AppLifecycleState.inactive;
+    });
+
     if (!_enabled) {
       return;
     }
@@ -124,10 +136,6 @@ class AppLockState extends State<AppLock> with WidgetsBindingObserver {
     if (state == AppLifecycleState.resumed) {
       _backgroundLockLatencyTimer?.cancel();
     }
-
-    setState(() {
-      _inactive = state == AppLifecycleState.inactive;
-    });
   }
 
   @override
@@ -154,7 +162,11 @@ class AppLockState extends State<AppLock> with WidgetsBindingObserver {
             key: const ValueKey('LockScreen'),
             child: _lockScreen,
           )
-        else if (_inactive && widget.inactiveBuilder != null)
+        else if ((_inactive && widget.inactiveBuilder != null) &&
+            ((widget.inactiveBehaviour == InactiveBehaviour.alwaysShow) ||
+                ((widget.inactiveBehaviour ==
+                        InactiveBehaviour.showWhenEnabled) &&
+                    _enabled)))
           NoAnimationPage(
             key: const ValueKey('InactiveScreen'),
             child: widget.inactiveBuilder!(context),
