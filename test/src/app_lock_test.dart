@@ -590,6 +590,135 @@ void main() {
     });
 
     group(
+        'When it is disabled and the app becomes inactive without an inactive builder set',
+        () {
+      late Widget sut;
+
+      setUp(() {
+        sut = MaterialApp(
+          builder: (context, child) => AppLock(
+            initialBackgroundLockLatency: const Duration(seconds: 1),
+            initiallyEnabled: false,
+            builder: (context, launchArg) => KeyedSubtree(
+              key: const Key('Unlocked'),
+              child: child!,
+            ),
+            lockScreenBuilder: (context) => const Scaffold(
+              key: Key('LockScreen'),
+            ),
+          ),
+          home: const Scaffold(),
+        );
+      });
+
+      testWidgets('The lock screen should not be shown', (widgetTester) async {
+        addTearDown(() {
+          widgetTester.binding
+              .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+        });
+
+        await widgetTester.pumpWidget(sut);
+
+        await setAppLifecycleToInactive(widgetTester);
+
+        expect(find.byKey(const Key('LockScreen')), findsNothing);
+      });
+
+      testWidgets('The unlocked app should be shown', (widgetTester) async {
+        addTearDown(() {
+          widgetTester.binding
+              .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+        });
+
+        await widgetTester.pumpWidget(sut);
+
+        await setAppLifecycleToInactive(widgetTester);
+
+        expect(find.byKey(const Key('Unlocked')), findsOneWidget);
+      });
+
+      testWidgets('The inactive screen should not be shown',
+          (widgetTester) async {
+        addTearDown(() {
+          widgetTester.binding
+              .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+        });
+
+        await widgetTester.pumpWidget(sut);
+
+        await setAppLifecycleToInactive(widgetTester);
+
+        expect(find.byKey(const Key('InactiveScreen')), findsNothing);
+      });
+    });
+
+    group(
+        'When it is disabled and the app becomes inactive with an inactive builder set',
+        () {
+      late Widget sut;
+
+      setUp(() {
+        sut = MaterialApp(
+          builder: (context, child) => AppLock(
+            initialBackgroundLockLatency: const Duration(seconds: 1),
+            initiallyEnabled: false,
+            builder: (context, launchArg) => KeyedSubtree(
+              key: const Key('Unlocked'),
+              child: child!,
+            ),
+            lockScreenBuilder: (context) => const Scaffold(
+              key: Key('LockScreen'),
+            ),
+            inactiveBuilder: (context) => const Scaffold(
+              key: Key('InactiveScreen'),
+            ),
+          ),
+          home: const Scaffold(),
+        );
+      });
+
+      testWidgets('The lock screen should not be shown', (widgetTester) async {
+        addTearDown(() {
+          widgetTester.binding
+              .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+        });
+
+        await widgetTester.pumpWidget(sut);
+
+        await setAppLifecycleToInactive(widgetTester);
+
+        expect(find.byKey(const Key('LockScreen')), findsNothing);
+      });
+
+      testWidgets('The unlocked app should be shown', (widgetTester) async {
+        addTearDown(() {
+          widgetTester.binding
+              .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+        });
+
+        await widgetTester.pumpWidget(sut);
+
+        await setAppLifecycleToInactive(widgetTester);
+
+        expect(find.byKey(const Key('Unlocked')), findsOneWidget);
+      });
+
+      testWidgets('The inactive screen should not be shown',
+          (widgetTester) async {
+        addTearDown(() {
+          widgetTester.binding
+              .handleAppLifecycleStateChanged(AppLifecycleState.resumed);
+        });
+
+        await widgetTester.pumpWidget(sut);
+
+        await setAppLifecycleToInactive(widgetTester);
+
+        expect(find.byKey(const Key('InactiveScreen')), findsNothing);
+      });
+    });
+
+    group(
         'When it is disabled and then enabled at runtime and the app becomes inactive without an inactive builder set',
         () {
       late Widget sut;
