@@ -8,11 +8,11 @@ void main({
   @visibleForTesting
   Duration initialBackgroundLockLatency = const Duration(seconds: 30),
   @visibleForTesting
-  InactiveBehaviour inactiveBehaviour = InactiveBehaviour.showWhenEnabled,
+  InactiveBehavior inactiveBehavior = InactiveBehavior.showWhenEnabled,
 }) {
   runApp(MyApp(
     initiallyEnabled: initiallyEnabled,
     initialBackgroundLockLatency: initialBackgroundLockLatency,
-    inactiveBehaviour: inactiveBehaviour,
+    inactiveBehavior: inactiveBehavior,
   ));
 }

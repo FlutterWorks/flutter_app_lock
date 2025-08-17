@@ -95,7 +95,7 @@ void main() {
       testWidgets('The home screen is visible', (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enterCorrectPassword(tester);
@@ -107,7 +107,7 @@ void main() {
           (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enterCorrectPassword(tester);
@@ -119,7 +119,7 @@ void main() {
           (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enterCorrectPassword(tester);
@@ -133,7 +133,7 @@ void main() {
           (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enterIncorrectPassword(tester);
@@ -145,7 +145,7 @@ void main() {
           (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enterIncorrectPassword(tester);
@@ -160,7 +160,7 @@ void main() {
       testWidgets('The home screen is visible', (WidgetTester tester) async {
         app.main(
           initiallyEnabled: false,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await tester.pumpAndSettle();
@@ -172,7 +172,7 @@ void main() {
           (WidgetTester tester) async {
         app.main(
           initiallyEnabled: false,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await tester.pumpAndSettle();
@@ -190,7 +190,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: const Duration(seconds: 1),
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await enableAfterLaunch(tester);
@@ -209,7 +209,7 @@ void main() {
             app.main(
               initiallyEnabled: false,
               initialBackgroundLockLatency: const Duration(seconds: 2),
-              inactiveBehaviour: InactiveBehaviour.alwaysShow,
+              inactiveBehavior: InactiveBehavior.alwaysShow,
             );
 
             await enableAfterLaunch(widgetTester);
@@ -224,7 +224,7 @@ void main() {
             app.main(
               initiallyEnabled: false,
               initialBackgroundLockLatency: const Duration(seconds: 2),
-              inactiveBehaviour: InactiveBehaviour.alwaysShow,
+              inactiveBehavior: InactiveBehavior.alwaysShow,
             );
 
             await enableAfterLaunch(widgetTester);
@@ -243,7 +243,7 @@ void main() {
             app.main(
               initiallyEnabled: false,
               initialBackgroundLockLatency: const Duration(seconds: 2),
-              inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+              inactiveBehavior: InactiveBehavior.showWhenEnabled,
             );
 
             await enableAfterLaunch(widgetTester);
@@ -258,7 +258,7 @@ void main() {
             app.main(
               initiallyEnabled: false,
               initialBackgroundLockLatency: const Duration(seconds: 2),
-              inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+              inactiveBehavior: InactiveBehavior.showWhenEnabled,
             );
 
             await enableAfterLaunch(widgetTester);
@@ -279,7 +279,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: Duration.zero,
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await enableAfterLaunch(widgetTester);
@@ -301,7 +301,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: Duration.zero,
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await enableAfterLaunch(widgetTester);
@@ -319,7 +319,7 @@ void main() {
       testWidgets('The lock screen is visible', (WidgetTester tester) async {
         app.main(
           initiallyEnabled: false,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await tester.pumpAndSettle();
@@ -339,7 +339,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
           );
 
           await becomeInactiveForDuration(
@@ -353,7 +353,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
           );
 
           await becomeInactiveForDuration(
@@ -371,7 +371,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await becomeInactiveForDuration(
@@ -385,7 +385,7 @@ void main() {
           app.main(
             initiallyEnabled: false,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await becomeInactiveForDuration(
@@ -403,7 +403,7 @@ void main() {
           (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await tester.pumpAndSettle();
@@ -414,7 +414,7 @@ void main() {
       testWidgets('The lock screen is visible', (WidgetTester tester) async {
         app.main(
           initiallyEnabled: true,
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await tester.pumpAndSettle();
@@ -430,7 +430,7 @@ void main() {
         app.main(
           initiallyEnabled: true,
           initialBackgroundLockLatency: const Duration(seconds: 1),
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enterCorrectPassword(tester);
@@ -449,7 +449,7 @@ void main() {
         app.main(
           initiallyEnabled: false,
           initialBackgroundLockLatency: const Duration(seconds: 2),
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enableAfterLaunch(tester);
@@ -466,7 +466,7 @@ void main() {
         app.main(
           initiallyEnabled: false,
           initialBackgroundLockLatency: const Duration(seconds: 1),
-          inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+          inactiveBehavior: InactiveBehavior.showWhenEnabled,
         );
 
         await enableAfterLaunch(tester);
@@ -485,7 +485,7 @@ void main() {
           app.main(
             initiallyEnabled: true,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
           );
 
           await becomeInactiveForDuration(
@@ -499,7 +499,7 @@ void main() {
           app.main(
             initiallyEnabled: true,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
           );
 
           await becomeInactiveForDuration(
@@ -517,7 +517,7 @@ void main() {
           app.main(
             initiallyEnabled: true,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await becomeInactiveForDuration(
@@ -531,7 +531,7 @@ void main() {
           app.main(
             initiallyEnabled: true,
             initialBackgroundLockLatency: const Duration(seconds: 2),
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
           );
 
           await becomeInactiveForDuration(

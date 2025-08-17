@@ -35,7 +35,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -81,7 +81,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -145,7 +145,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -211,7 +211,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -281,7 +281,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -366,7 +366,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 2),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -454,7 +454,7 @@ void main() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
             key: appLockKey,
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: Duration.zero,
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -510,7 +510,7 @@ void main() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
             key: appLockKey,
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: Duration.zero,
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -561,7 +561,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -607,7 +607,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -671,7 +671,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -737,7 +737,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -807,7 +807,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -879,7 +879,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -955,7 +955,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1046,7 +1046,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.alwaysShow,
+            inactiveBehavior: InactiveBehavior.alwaysShow,
             initialBackgroundLockLatency: const Duration(seconds: 2),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1139,7 +1139,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1185,7 +1185,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1249,7 +1249,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1315,7 +1315,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1385,7 +1385,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1470,7 +1470,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 2),
             initiallyEnabled: true,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1558,7 +1558,7 @@ void main() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
             key: appLockKey,
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: Duration.zero,
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1614,7 +1614,7 @@ void main() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
             key: appLockKey,
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: Duration.zero,
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1665,7 +1665,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1711,7 +1711,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1775,7 +1775,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1842,7 +1842,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1912,7 +1912,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -1984,7 +1984,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -2060,7 +2060,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 1),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(
@@ -2151,7 +2151,7 @@ void main() {
       setUp(() {
         sut = MaterialApp(
           builder: (context, child) => AppLock(
-            inactiveBehaviour: InactiveBehaviour.showWhenEnabled,
+            inactiveBehavior: InactiveBehavior.showWhenEnabled,
             initialBackgroundLockLatency: const Duration(seconds: 2),
             initiallyEnabled: false,
             builder: (context, launchArg) => KeyedSubtree(

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_lock/src/no_animation_page.dart';
 
-enum InactiveBehaviour {
+enum InactiveBehavior {
   alwaysShow,
   showWhenEnabled,
 }
@@ -39,7 +39,7 @@ class AppLock extends StatefulWidget {
   final Widget? lockScreen;
   final WidgetBuilder? lockScreenBuilder;
   final WidgetBuilder? inactiveBuilder;
-  final InactiveBehaviour inactiveBehaviour;
+  final InactiveBehavior inactiveBehavior;
   final bool _initiallyEnabled;
   final Duration _initialBackgroundLockLatency;
 
@@ -51,7 +51,7 @@ class AppLock extends StatefulWidget {
     this.lockScreen,
     this.lockScreenBuilder,
     this.inactiveBuilder,
-    this.inactiveBehaviour = InactiveBehaviour.showWhenEnabled,
+    this.inactiveBehavior = InactiveBehavior.showWhenEnabled,
     @Deprecated(
         'Use `initiallyEnabled` instead. `enabled` will be removed in version 5.0.0.')
     bool? enabled,
@@ -162,9 +162,9 @@ class AppLockState extends State<AppLock> with WidgetsBindingObserver {
             child: _lockScreen,
           )
         else if ((_inactive && widget.inactiveBuilder != null) &&
-            ((widget.inactiveBehaviour == InactiveBehaviour.alwaysShow) ||
-                ((widget.inactiveBehaviour ==
-                        InactiveBehaviour.showWhenEnabled) &&
+            ((widget.inactiveBehavior == InactiveBehavior.alwaysShow) ||
+                ((widget.inactiveBehavior ==
+                        InactiveBehavior.showWhenEnabled) &&
                     _enabled)))
           NoAnimationPage(
             key: const ValueKey('InactiveScreen'),
