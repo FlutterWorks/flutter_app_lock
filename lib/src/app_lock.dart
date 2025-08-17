@@ -6,7 +6,6 @@ import 'package:flutter_app_lock/src/no_animation_page.dart';
 enum InactiveBehaviour {
   alwaysShow,
   showWhenEnabled,
-  neverShow,
 }
 
 /// A widget which handles app lifecycle events for showing and hiding a lock
