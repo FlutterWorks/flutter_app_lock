@@ -1,38 +1,63 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_lock/src/no_animation_page.dart';
 
+/// [InactiveBehavior] controls whether the widget returned by
+/// [AppLock.inactiveBuilder] is shown only when [AppLock] is enabled or
+/// whether it should always been shown.
+///
+/// - [InactiveBehavior.alwaysShow] - show the widget returned by
+/// [AppLock.inactiveBuilder] if all of the following conditions are true:
+///   - The [AppLifecycleState] is [AppLifecycleState.inactive]
+///   - [AppLock.inactiveBuilder] is set
+///
+/// - [InactiveBehavior.showWhenEnabled] - show the widget returned by
+/// [AppLock.inactiveBuilder] if all of the following conditions are true:
+///   - The [AppLifecycleState] is [AppLifecycleState.inactive]
+///   - [AppLock.inactiveBuilder] is set
+///   - [AppLock] is enabled
 enum InactiveBehavior {
   alwaysShow,
   showWhenEnabled,
 }
 
-/// A widget which handles app lifecycle events for showing and hiding a lock
-/// screen. This should wrap around a `MyApp` widget (or equivalent).
+/// [AppLock] is a widget that handles app lifecycle events for showing and
+/// hiding a lock screen, protecting visual access to your app.
 ///
-/// [lockScreen] (or preferably the [Widget] returned from [lockScreenBuilder])
-/// is a [Widget] which should be a screen for handling login logic and calling
-/// `AppLock.of(context).didUnlock();` upon a successful login.
+/// [builder] returns a [Widget] representing the rest of your app - most
+/// likely the `child` parameter of the [MaterialApp.builder],
+/// [CupertinoApp.builder] or [WidgetsApp.builder] functions.
 ///
-/// [builder] is a [Function] taking an [Object] as its argument and should
-/// return a [Widget]. The [Object] argument is provided by the [lockScreen]
-/// (or preferably the [Widget] returned from [lockScreenBuilder]) calling
-/// `AppLock.of(context).didUnlock();` with an argument. [Object] can then be
-/// injected in to your `MyApp` widget (or equivalent).
+/// The `launchArg` parameter in [builder] is provided by the [Widget] returned
+/// from [lockScreenBuilder] calling `AppLock.of(context)!.didUnlock();` with
+/// an argument. `launchArg` can then be used as you see fit.
 ///
-/// [initiallyEnabled] determines wether or not the [lockScreen] (or preferably
-/// the [Widget] returned from [lockScreenBuilder]) should be shown on app
-/// launch and subsequent app pauses. This can be changed later on using
-/// `AppLock.of(context).enable();`, `AppLock.of(context).disable();` or the
+/// [lockScreenBuilder] returns the [Widget] to be shown to users while the app
+/// is considered "locked". It should be a screen for handling the verification
+/// logic your app needs to consider the app "unlocked", and calls
+/// `AppLock.of(context)!.didUnlock();` upon a successful verification.
+///
+/// [inactiveBuilder] returns the [Widget] to be shown to the user while the
+/// app's [AppLifecycleState] is [AppLifecycleState.inactive].
+///
+/// [inactiveBehavior] controls whether the widget returned by
+/// [AppLock.inactiveBuilder] is shown only when [AppLock] is enabled or
+/// whether it should always been shown.
+///
+/// [initiallyEnabled] determines wether or not the the [Widget] returned from
+/// [lockScreenBuilder] should be shown on app launch and subsequent app
+/// pauses. This can be changed later on using
+/// `AppLock.of(context)!.enable();`, `AppLock.of(context)!.disable();` or the
 /// convenience method `AppLock.of(context).setEnabled(enabled);` using a
 /// [bool] argument.
 ///
 /// [initialBackgroundLockLatency] determines how much time is allowed to pass
-/// when the app is in the background state before the [lockScreen] (or
-/// preferably the [Widget] returned from [lockScreenBuilder]) widget should be
-/// shown upon returning. It defaults to instantly. This can be changed later
-/// on using `AppLock.of(context).setBackgroundLockLatency(duration);` using a
+/// when the app is in the background state before the [Widget] returned from
+/// [lockScreenBuilder] widget should be shown upon returning. It defaults to
+/// instantly. This can be changed later on using
+/// `AppLock.of(context)!.setBackgroundLockLatency(duration);` using a
 /// [Duration] argument.
 class AppLock extends StatefulWidget {
   final Widget Function(BuildContext context, Object? launchArg) builder;

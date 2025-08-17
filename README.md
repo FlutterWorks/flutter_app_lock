@@ -192,8 +192,30 @@ MaterialApp(
 
 [There are limitations to this as noted on issue #6 on GitHub](https://github.com/tomalabaster/flutter_app_lock/issues/6#issuecomment-1872616800).
 
+The widget returned by `inactiveBuilder` is only shown if `AppLock` is enabled (default behavior). This can be changed so the widget returned by `inactiveBuilder` is shown whenever the app is inactive, irrespective of whether `AppLock` is enabled or not, by setting `inactiveBehavior` to `InactiveBehavior.alwaysShow`.
+
+```dart
+MaterialApp(
+  ...,
+  builder: (context, child) => AppLock(
+    ...,
+    inactiveBehavior: InactiveBehavior.showWhenEnabled, // only show when the app is in active and AppLock is enabled (default)
+  ),
+);
+```
+
+```dart
+MaterialApp(
+  ...,
+  builder: (context, child) => AppLock(
+    ...,
+    inactiveBehavior: InactiveBehavior.alwaysShow, // always show when the app is inactive
+  ),
+);
+```
+
 ## Tests
 
-Integration tests have been introduced in the example project and were used to confirm the behaviour hasn't changed since the move to null-safety.
+Integration tests have been introduced in the example project and were used to confirm the behavior hasn't changed since the move to null-safety.
 
 They can be run by running `flutter test integration_test/integration_tests.dart` in a terminal.
