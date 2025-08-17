@@ -5,15 +5,20 @@ import '../screens/lock_screen.dart';
 import '../screens/my_home_page.dart';
 
 class MyApp extends StatelessWidget {
+  @visibleForTesting
   final bool initiallyEnabled;
 
   @visibleForTesting
   final Duration initialBackgroundLockLatency;
 
+  @visibleForTesting
+  final InactiveBehaviour inactiveBehaviour;
+
   const MyApp({
     super.key,
-    this.initiallyEnabled = false,
+    required this.initiallyEnabled,
     required this.initialBackgroundLockLatency,
+    required this.inactiveBehaviour,
   });
 
   @override
@@ -30,6 +35,7 @@ class MyApp extends StatelessWidget {
         ),
         initiallyEnabled: initiallyEnabled,
         initialBackgroundLockLatency: initialBackgroundLockLatency,
+        inactiveBehaviour: inactiveBehaviour,
         inactiveBuilder: (context) => const Scaffold(
           key: Key('InactiveScreen'),
           body: Center(
